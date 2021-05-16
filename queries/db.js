@@ -2,8 +2,13 @@ const { Client } = require("pg");
 require("dotenv").config();
 
 const client = new Client({
-    connectionString: process.env.DATABASE_URL,
-    ssl: { rejectUnauthorized: false },
+    host: "localhost",
+    port: 5432,
+    user: "postgres",
+    password: "postgres",
+    database: "postgres",
+    // connectionString: process.env.DATABASE_URL,
+    // ssl: { rejectUnauthorized: false },
 });
 
 client
