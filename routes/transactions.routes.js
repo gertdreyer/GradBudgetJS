@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const { requiresAuth } = require("express-openid-connect");
 const {
     getTransactions,
     getTransactionsForUser,
@@ -13,7 +12,7 @@ router.get("/transactions", async (req, res) => {
     res.json(result);
 });
 
-router.get("/transactions", requiresAuth(), async (req, res) => {
+router.get("/transactions", async (req, res) => {
     console.log("auth test", req.oidc);
     const result = await getTransactionsForUser();
     res.json(result);

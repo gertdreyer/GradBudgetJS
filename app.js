@@ -4,6 +4,8 @@ const routes = require("./routes/router");
 const transactions = require("./routes/transactions.routes");
 const budgets = require("./routes/budgets.routes");
 const { auth } = require("express-openid-connect");
+const { checkIfUserExists } = require("./cache/usersCache");
+const { requiresAuth } = require("express-openid-connect");
 
 require("dotenv").config();
 
@@ -12,6 +14,7 @@ const port = process.env.PORT ?? 3000;
 
 app.use(express.json());
 app.use(auth(JSON.parse(process.env.AUTH_CONF)));
+app.use(requiresAuth(), checkIfUserExists);
 app.engine("handlebars", exphbs());
 app.set("view engine", "handlebars");
 
