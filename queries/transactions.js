@@ -15,7 +15,6 @@ const getTransactions = async () => {
     }
 };
 
-//Still In-Progress - Will complete when we know exactly how we're getting UID's
 const getTransactionsForUser = async (queryParams) => {
     const query = `
     SELECT userexpenceid, description, amount, categoryid, userid
