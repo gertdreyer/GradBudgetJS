@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const {
-    getBudgets,
     getBudgetsForUser,
     createBudget,
     updateBudgetById,
@@ -8,19 +7,13 @@ const {
 
 router.get("/budgets", async (req, res) => {
     console.log(req.query);
-    const result = await getBudgets();
-    res.json(result);
-});
-
-router.get("/budgets", async (req, res) => {
-    console.log("auth test", req.oidc);
-    const result = await getBudgetsForUser();
+    const result = await getBudgetsForUser([res.locals.uid]);
     res.json(result);
 });
 
 router.post("/budgets", async (req, res) => {
     const queryParams = Object.values(req.body);
-    const result = await createBudget(queryParams);
+    const result = await createBudget([...queryParams, res.locals.uid]);
     if (result === "Budget successfully created") {
         res.sendStatus(200, result);
     } else {

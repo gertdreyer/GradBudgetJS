@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const {
-    getTransactions,
     getTransactionsForUser,
     createTransaction,
     updateTransaction,
@@ -8,19 +7,13 @@ const {
 
 router.get("/transactions", async (req, res) => {
     console.log(req.query);
-    const result = await getTransactions();
-    res.json(result);
-});
-
-router.get("/transactions", async (req, res) => {
-    console.log("auth test", req.oidc);
-    const result = await getTransactionsForUser();
+    const result = await getTransactionsForUser([res.locals.uid]);
     res.json(result);
 });
 
 router.post("/transactions", async (req, res) => {
     const queryParams = Object.values(req.body);
-    const result = await createTransaction(queryParams);
+    const result = await createTransaction([...queryParams, res.locals.uid]);
     if (result === "Transaction successfully created") {
         res.sendStatus(200, result);
     } else {

@@ -15,11 +15,10 @@ const getBudgets = async () => {
     }
 };
 
-//Still In-Progress - Will complete when we know exactly how we're getting UID's
 const getBudgetsForUser = async (queryParams) => {
     let query = `
         SELECT usercategoryid, catagoryname, userid, budget
-        FROM usercatagories;
+        FROM usercatagories WHERE userid = $1;
     `;
 
     try {
@@ -36,8 +35,8 @@ const createBudget = async (queryParams) => {
         INSERT INTO usercatagories
         (
             catagoryname, 
-            userid, 
-            budget
+            budget,
+            userid
         )
         VALUES ($1, $2, $3);
     `;
