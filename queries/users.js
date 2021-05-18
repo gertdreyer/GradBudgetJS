@@ -23,7 +23,6 @@ const getUsers = async () => {
 
     try {
         const result = await client.query(query);
-        console.log(result.rows);
         return result.rows;
     } catch (e) {
         console.log(e);

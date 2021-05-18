@@ -11,8 +11,8 @@
     I'm also open to other suggestions because I don't know if this is the best solution).
     
     It then checks the cache for the current authed users info.
-    If it finds the user, then it sends them on to the requested route (and we can
-    always access their UID in the cache using their OIDC Identity).
+    If it finds the user, then it sends them on to the requested route (it also binds their
+    UID to the res.locals object so we can access it there anywhere down the line).
     If it doesn't find them, it creates the user in the DB, and updates the cache as 
     necessary.
 
@@ -29,8 +29,6 @@ const { getUsers, createUser } = require("../queries/users");
 let usersCache = [];
 
 const checkIfUserExists = async (req, res, next) => {
-    console.log(res.query);
-
     if (usersCache?.length === 0) {
         usersCache = await getUsers();
         //Time out cache every 12 hours
@@ -41,9 +39,9 @@ const checkIfUserExists = async (req, res, next) => {
     }
     //console.log("Current Cache:", usersCache);
 
-    const userId = req.oidc.user.sub;
-    if (!usersCache.some((u) => u.oauthlink === userId)) {
-        const userCreated = await createUser([userId]);
+    const authId = req.oidc.user.sub;
+    if (!usersCache.some((u) => u.oauthlink === authId)) {
+        const userCreated = await createUser([authId]);
         usersCache.push({
             userid: userCreated[0].userid,
             oauthlink: userCreated[0].oauthlink,
@@ -51,7 +49,14 @@ const checkIfUserExists = async (req, res, next) => {
         // console.log("User Created:", usersCache);
     }
 
+    res.locals.uid = getUserId(authId);
+
     next();
+};
+
+const getUserId = (link) => {
+    const uid = usersCache.find((u) => u.oauthlink === link).userid;
+    return uid;
 };
 
 module.exports = {
