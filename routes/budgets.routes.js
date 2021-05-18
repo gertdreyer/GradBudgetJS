@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const { requiresAuth } = require("express-openid-connect");
 const {
     getBudgets,
     getBudgetsForUser,
@@ -13,7 +12,7 @@ router.get("/budgets", async (req, res) => {
     res.json(result);
 });
 
-router.get("/budgets", requiresAuth(), async (req, res) => {
+router.get("/budgets", async (req, res) => {
     console.log("auth test", req.oidc);
     const result = await getBudgetsForUser();
     res.json(result);

@@ -1,7 +1,6 @@
 const router = require("express").Router();
-const { requiresAuth } = require("express-openid-connect");
 
-router.get("/profile", requiresAuth(), (req, res) => {
+router.get("/profile", (req, res) => {
     res.json(req.oidc.user);
 });
 
