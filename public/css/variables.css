@@ -1,0 +1,13 @@
+:root {
+  --primary-colour: #4f61c0;
+  --secondary-colour: #a5e7ef;
+  --background-colour: #f8f6fb;
+  --panel-background-colour: #ffffff;
+  --shadow-colour: #888888;
+  --muted-text-colour: #d2d6d9;
+  --btn-positive-colour: #34c759;
+  --btn-negative-colour: #ea241b;
+  --heading-font-size: 4rem;
+  --panel-heading-font-size: 3rem;
+  --panel-amount-font-size: 3.5rem;
+}

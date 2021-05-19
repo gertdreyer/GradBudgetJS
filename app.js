@@ -14,6 +14,7 @@ const app = express();
 const port = process.env.PORT ?? 3000;
 
 app.use(express.json());
+app.use(express.static(__dirname + "/public"));
 app.use(auth(JSON.parse(process.env.AUTH_CONF)));
 app.use(requiresAuth(), checkIfUserExists);
 app.engine("handlebars", exphbs());
