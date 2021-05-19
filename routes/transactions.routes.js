@@ -3,10 +3,24 @@ const {
     getTransactionsForUser,
     createTransaction,
     updateTransaction,
+    getTransactionsForUserById,
 } = require("../queries/transactions");
 
 router.get("/transactions", async (req, res) => {
     const result = await getTransactionsForUser([res.locals.uid]);
+    const content = {
+        transactions: result,
+    };
+    res.render("transactions", content);
+});
+
+router.get("/transactions/:id", async (req, res) => {
+    const { id } = req.params;
+    const result = await getTransactionsForUserById([res.locals.uid, id]);
+    // const content = {
+    //     transactions: result,
+    // };
+    // res.render("transactions", content);
     res.json(result);
 });
 
