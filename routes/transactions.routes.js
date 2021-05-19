@@ -17,11 +17,9 @@ router.get("/transactions", async (req, res) => {
 router.get("/transactions/:id", async (req, res) => {
     const { id } = req.params;
     const result = await getTransactionsForUserById([res.locals.uid, id]);
-    // const content = {
-    //     transactions: result,
-    // };
-    // res.render("transactions", content);
-    res.json(result);
+    const content = result[0];
+
+    res.render("edit-transaction", content);
 });
 
 router.post("/transactions", async (req, res) => {

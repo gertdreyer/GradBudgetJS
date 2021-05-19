@@ -68,8 +68,6 @@ const updateTransaction = async (queryParams) => {
 };
 
 const getTransactionsForUserById = async (queryParams) => {
-    console.log(queryParams);
-
     let query = `
         SELECT userexpenceid, description, amount, categoryid, userid
         FROM usertransactions WHERE userid = $1 AND userexpenceid = $2;
