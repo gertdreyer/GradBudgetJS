@@ -10,7 +10,6 @@ router.get("/profile", requiresAuth(), (req, res) => {
 });
 
 router.get("/", (req, res) => {
-    console.log(req.query);
     let contents = {
         name: "World",
         params: `<h2 style='color:${req.query.color ?? "black"}'>${
@@ -21,7 +20,6 @@ router.get("/", (req, res) => {
 });
 
 router.get("/transactions", async (req, res) => {
-    console.log(req.query);
     const result = await getTransactions();
     res.json(result);
 });
