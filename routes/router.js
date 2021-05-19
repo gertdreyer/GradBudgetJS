@@ -5,7 +5,6 @@ router.get("/profile", (req, res) => {
 });
 
 router.get("/", (req, res) => {
-    console.log(req.query);
     let contents = {
         name: "World",
         params: `<h2 style='color:${req.query.color ?? "black"}'>${

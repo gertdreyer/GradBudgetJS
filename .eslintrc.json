@@ -6,6 +6,12 @@
             1,
             4
         ],
+        "no-unused-vars": [
+            "error", 
+            { 
+                "args": "none" 
+            }
+        ],
         "no-else-return": 1,
         "semi": [
             1,

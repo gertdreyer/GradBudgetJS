@@ -6,7 +6,6 @@ const {
 } = require("../queries/budget");
 
 router.get("/budgets", async (req, res) => {
-    console.log(req.query);
     const result = await getBudgetsForUser([res.locals.uid]);
     res.json(result);
 });
