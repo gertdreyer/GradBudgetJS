@@ -4,12 +4,12 @@
         <li class="transaction-container">
             <h3 class="transaction-heading">{{description}}</h3>
             <h4 class="transaction-amount">{{amount}}</h4>
-            <button onclick='location.href="transactions/{{userexpenceid}}"' class="btn-general edit">
+            <button name="edit transaction" onclick='location.href="transactions/{{userexpenceid}}"' class="btn-general edit">
                 <img class="btn-icon" src="/images/edit.svg">
             </button>
         </li>
     {{/each}}
-    <button onclick='location.href="new-transaction"' class="btn-general new-transaction-btn">
+    <button name="create new transaction" onclick='location.href="new-transaction"' class="btn-general new-transaction-btn">
         <section class="btn-inner-container">
             <h5 class="btn-text">Log New Transaction</h5>
             <img class="btn-icon plus-icon" src="/images/plus.svg">
