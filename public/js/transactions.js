@@ -27,6 +27,7 @@ const putTransactions = async () => {
     window.location = "/transactions";
 };
 
+// eslint-disable-next-line no-unused-vars
 const postTransactions = async () => {
     const desc = document.getElementById("desc");
     const am = document.getElementById("amount");
@@ -35,7 +36,7 @@ const postTransactions = async () => {
     const data = {
         description: desc.value,
         amount: am.value,
-        categoryid: catid 
+        categoryid: catid,
     };
 
     await sendHTTP(`/transactions`, "POST", data);
