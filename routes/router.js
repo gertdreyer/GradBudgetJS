@@ -15,4 +15,11 @@ router.get("/", (req, res) => {
     res.render("home", contents);
 });
 
+router.get("*", (req, res) => {
+    const content = {
+        name: req.oidc.user.given_name,
+    };
+    res.render("not-found", content);
+});
+
 module.exports = router;
