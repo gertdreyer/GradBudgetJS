@@ -24,7 +24,8 @@ ol, li, p, h4 {
     margin-left: 35px;
     margin-right: 35px;
     width: min-content;
-    background: rgb(221, 218, 218);
+    background: var(--background-color);
+    box-shadow: 2px 2px 2px 2px lightgray;
     color: black;
     border-radius: 25px;
   }
