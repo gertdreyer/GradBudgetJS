@@ -38,12 +38,14 @@ h4 {
 .budget-h4 {
   position: relative;
   padding-bottom: 10px;
+  font-family: var(--primary-font);
 }
 
 .budget-p {
   font-size: 0.9rem;
   line-height: 1.4rem;
   margin-top: 15px;
+  font-family: var(--primary-font);
 }
 
 .budget-h3-1 {
@@ -52,12 +54,15 @@ h4 {
   margin: 15px 0;
   text-align: left;
   color: rgb(182, 178, 178);
+  font-family: var(--primary-font);
+  font-weight: 300;
 }
 
 .budget-h3-2 {
   font-size: 1.65rem;
   margin: 15px 0;
   text-align: center;
+  font-family: var(--primary-font);
 }
 
 .budget-button {
