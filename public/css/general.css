@@ -26,6 +26,8 @@ footer {
   border: none;
   padding: 10px;
   border-radius: 30px;
+  color: var(--panel-background-colour);
+  font-family: var(--primary-font);
 }
 
 .btn-confirm {
@@ -47,6 +49,7 @@ footer {
 
 .form-input {
   color: black;
+  border-radius: 30px;
   font-family: var(--primary-font);
   background-color: var(--panel-background-colour);
   border: 2px solid var(--panel-background-colour);

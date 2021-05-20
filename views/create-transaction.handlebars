@@ -1,10 +1,15 @@
-<h1 class="transactions-title">Edit Transaction</h1>
-<form id="edit-transaction-form" method="post" action="/transactions/{{userexpenceid}}">
-    <input type="hidden" id="id" value="{{userexpenceid}}">
+<h1 class="transactions-title">Create Transaction</h1>
+<form id="edit-transaction-form" method="post" action="/transactions">
     <label class="transaction-heading form-label">Description:</label>
-    <input class="form-input" id="desc" type="text" value="{{description}}">
+    <input class="form-input" id="desc" type="text" value="">
     <label class="transaction-heading form-label">Amount:</label>
-    <input class="form-input" id="amount" type="text" value="{{amount}}">
+    <input class="form-input" id="amount" type="text" value="">
+    <label class="transaction-heading form-label">Budget:</label>
+    <select class="form-input dropdown" name="budget" id="budget-dropdown">
+        {{#each budget}}
+            <option class="dropdown-item" value={{usercategoryid}}>{{categoryname}}</option>
+        {{/each}}
+    </select>
     <section class="transaction-btn-container">
         <button id="put-transaction" type="button" class="btn-general btn-confirm edit">
             <img class="btn-icon" src="/images/tick.svg">

@@ -5,6 +5,7 @@ const {
     updateTransaction,
     getTransactionsForUserById,
 } = require("../queries/transactions");
+const { getBudgetsForUser } = require("../queries/budget");
 const navlist = require("./navlist");
 
 router.get("/transactions", async (req, res) => {
@@ -22,6 +23,14 @@ router.get("/transactions/:id", async (req, res) => {
     const content = result[0];
     content.navlist = navlist;
     res.render("edit-transaction", content);
+});
+
+router.get("/new-transaction", async (req, res) => {
+    const result = await getBudgetsForUser([res.locals.uid]);
+    const content = {
+        budgets: result,
+    };
+    res.render("create-transaction", content);
 });
 
 router.post("/transactions", async (req, res) => {
