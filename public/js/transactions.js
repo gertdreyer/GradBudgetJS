@@ -27,4 +27,20 @@ const putTransactions = async () => {
     window.location = "/transactions";
 };
 
+const postTransactions = async () => {
+    const desc = document.getElementById("desc");
+    const am = document.getElementById("amount");
+    const catid = document.getElementById("category");
+
+    const data = {
+        description: desc.value,
+        amount: am.value,
+        categoryid: catid 
+    };
+
+    await sendHTTP(`/transactions`, "POST", data);
+
+    window.location = "/transactions";
+};
+
 submitBtn.addEventListener("click", () => putTransactions());
