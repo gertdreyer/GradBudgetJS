@@ -8,10 +8,6 @@ const { auth } = require("express-openid-connect");
 const { checkIfUserExists } = require("./cache/usersCache");
 const { requiresAuth } = require("express-openid-connect");
 
-if (process.NODE_ENV == "development") {
-    require("dotenv").config();
-}
-
 const app = express();
 const port = process.env.PORT ?? 3000;
 
