@@ -1,15 +1,25 @@
 const router = require("express").Router();
+const navlist = require("./navlist");
+
 const {
     getBudgetsForUser,
     createBudget,
     updateBudgetById,
-    getBudgetUsageForUser,
-    getBudgetChartdata,
 } = require("../queries/budget");
 // const router = require("./test.routes");
 
 router.get("/budgets", async (req, res) => {
     const result = await getBudgetsForUser([res.locals.uid]);
+    const content = {
+        budget: result,
+        navlist,
+    };
+    res.render("budget", content);
+});
+
+router.get("/budgets/:id", async (req, res) => {
+    const { id } = req.params;
+    const result = await getBudgetsForUserById([res.locals.uid, id]);
     res.json(result);
 });
 

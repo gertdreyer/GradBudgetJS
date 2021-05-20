@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/css/general.css">
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/transactions.css">
+    <link rel="stylesheet" href="/css/budget.css">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
@@ -19,6 +20,9 @@
 <body onload="makeNavActive()">
     <nav>
         <ul class="nav-list">
+            <li>
+                <img class="logo" src="/images/bird.svg">
+            </li>
             {{#each navlist }}
             <li class="nav-item">
                 <a href={{href}}>{{name}}</a>

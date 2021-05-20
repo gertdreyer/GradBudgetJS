@@ -1,14 +1,22 @@
-CREATE TABLE IF NOT EXISTS Users (
+CREATE TABLE
+IF NOT EXISTS Users
+(
 UserID bigserial PRIMARY KEY NOT NULL,
-Oauthlink varchar(50) NOT NULL
+Oauthlink varchar
+(50) NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS UserCatagories(
+CREATE TABLE
+IF NOT EXISTS UserCategories
+(
 UserCategoryID bigserial PRIMARY KEY NOT NULL,
-CatagoryName varchar(30) NOT NULL,
+CategoryName varchar
+(30) NOT NULL,
 UserID BIGINT NOT NULL,
 Budget money NULL, 
-FOREIGN KEY(UserID) REFERENCES Users(UserID)
+FOREIGN KEY
+(UserID) REFERENCES Users
+(UserID)
 );
 
 CREATE TABLE UserTransactions(
@@ -20,4 +28,3 @@ UserID BIGINT,
 month date NOT NULL DEFAULT CURRENT_DATE,
 FOREIGN KEY(UserID) REFERENCES Users(UserID),
 FOREIGN KEY(CategoryID) REFERENCES UserCatagories(UserCategoryID)
-);
