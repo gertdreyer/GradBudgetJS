@@ -19,6 +19,8 @@ const putBudgets = async () => {
     };
 
     await sendHTTP(`/budgets/${id}`, "PUT", data);
+
+    window.location = "/budgets";
 };
 
 // eslint-disable-next-line no-unused-vars
