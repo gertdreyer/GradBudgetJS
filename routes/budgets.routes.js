@@ -1,4 +1,6 @@
 const router = require("express").Router();
+const navlist = require("./navlist");
+
 const {
     getBudgetsForUser,
     createBudget,
@@ -7,7 +9,11 @@ const {
 
 router.get("/budgets", async (req, res) => {
     const result = await getBudgetsForUser([res.locals.uid]);
-    res.json(result);
+    const content = {
+        budget: result,
+        navlist,
+    };
+    res.render("budget", content);
 });
 
 router.post("/budgets", async (req, res) => {

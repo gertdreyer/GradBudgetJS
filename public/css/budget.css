@@ -1,0 +1,56 @@
+ol, li, p, h4 {
+    margin: 0;
+  }
+
+  .budget-h1 {
+    font-family: var(--primary-font);
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  
+  .budget-ol {
+    counter-reset: section;
+  }
+  
+  .budget-li { 
+    list-style-type: none;
+    position: relative;
+    font-size: 1.5rem;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    padding-right: 20%;
+    padding-left: 2%;
+    margin-bottom: 35px;
+    margin-left: 35px;
+    margin-right: 35px;
+    width: min-content;
+    background: rgb(221, 218, 218);
+    color: black;
+    border-radius: 25px;
+  }
+  
+  .budget-h4 {
+    position: relative;
+    padding-bottom: 10px;
+  }
+  
+  
+  .budget-p {
+    font-size: .9rem; 
+    line-height: 1.4rem;
+    margin-top: 15px;
+  }
+  
+  .budget-h3-1 {
+    position: left;
+    font-size: 1.65rem;
+    margin: 15px 0;
+    text-align: left;
+    color:rgb(182, 178, 178);
+  }
+  
+  .budget-h3-2 {
+    font-size: 1.65rem;
+    margin: 15px 0;
+    text-align: center;
+  }
