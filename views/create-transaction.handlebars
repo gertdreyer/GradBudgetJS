@@ -1,0 +1,22 @@
+<h1 class="transactions-title">Create Transaction</h1>
+<form id="edit-transaction-form" method="post" action="/transactions">
+    <label class="transaction-heading form-label">Description:</label>
+    <input class="form-input" id="desc" type="text" value="">
+    <label class="transaction-heading form-label">Amount:</label>
+    <input class="form-input" id="amount" type="text" value="">
+    <label class="transaction-heading form-label">Budget:</label>
+    <select class="form-input dropdown" name="budget" id="budget-dropdown">
+        {{#each budget}}
+            <option class="dropdown-item" value={{usercategoryid}}>{{categoryname}}</option>
+        {{/each}}
+    </select>
+    <section class="transaction-btn-container">
+        <button id="put-transaction" type="button" class="btn-general btn-confirm edit">
+            <img class="btn-icon" src="/images/tick.svg">
+        </button>
+        <button id="cancel" type="button" class="btn-general btn-cancel edit">
+            <img class="btn-icon" src="/images/cross.svg">
+        </button>
+    </section>
+</form>
+<script src="/js/transactions.js"></script>

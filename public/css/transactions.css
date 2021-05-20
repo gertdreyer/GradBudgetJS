@@ -83,3 +83,28 @@
 #edit-transaction-form {
   margin-top: 50px;
 }
+
+.new-transaction-btn {
+  width: 80%;
+  height: 100px;
+  margin: 20px 0 120px 10%;
+  font-family: var(--primary-font);
+  font-size: 3rem;
+}
+
+.plus-icon {
+  width: 25%;
+  height: 60px;
+  margin-top: 10px;
+}
+
+.btn-inner-container {
+  display: flex;
+  height: 100%;
+}
+
+.btn-text {
+  width: 70%;
+  font-family: var(--primary-font);
+  margin: 15px 0 0 20%;
+}

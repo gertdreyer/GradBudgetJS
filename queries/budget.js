@@ -2,8 +2,8 @@ const client = require("./db");
 
 const getBudgets = async () => {
     let query = `
-        SELECT usercategoryid, catagoryname, userid, budget
-        FROM usercatagories;
+        SELECT usercategoryid, categoryname, userid, budget
+        FROM usercategories;
     `;
 
     try {
@@ -17,8 +17,8 @@ const getBudgets = async () => {
 
 const getBudgetsForUser = async (queryParams) => {
     let query = `
-        SELECT usercategoryid, catagoryname, userid, budget
-        FROM usercatagories WHERE userid = $1;
+        SELECT usercategoryid, categoryname, userid, budget
+        FROM usercategories WHERE userid = $1;
     `;
 
     try {
@@ -32,9 +32,9 @@ const getBudgetsForUser = async (queryParams) => {
 
 const createBudget = async (queryParams) => {
     let query = `
-        INSERT INTO usercatagories
+        INSERT INTO usercategories
         (
-            catagoryname, 
+            categoryname, 
             budget,
             userid
         )
@@ -52,8 +52,8 @@ const createBudget = async (queryParams) => {
 
 const updateBudgetById = async (queryParams) => {
     let query = `
-        UPDATE usercatagories
-        SET catagoryname=$2, budget=$3
+        UPDATE usercategories
+        SET categoryname=$2, budget=$3
         WHERE usercategoryid = $1;
     `;
 
