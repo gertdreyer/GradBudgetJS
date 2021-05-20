@@ -5,13 +5,13 @@
     <label class="transaction-heading form-label">Amount:</label>
     <input class="form-input" id="amount" type="text" value="">
     <label class="transaction-heading form-label">Budget:</label>
-    <select class="form-input dropdown" name="budget" id="budget-dropdown">
-        {{#each budget}}
+    <select class="form-input dropdown" name="budget" id="category">
+        {{#each budgets}}
             <option class="dropdown-item" value={{usercategoryid}}>{{categoryname}}</option>
         {{/each}}
     </select>
     <section class="transaction-btn-container">
-        <button id="put-transaction" type="button" class="btn-general btn-confirm edit">
+        <button id="post-transaction" type="button" class="btn-general btn-confirm edit">
             <img class="btn-icon" src="/images/tick.svg">
         </button>
         <button id="cancel" type="button" class="btn-general btn-cancel edit">
