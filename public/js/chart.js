@@ -13,6 +13,14 @@ const sendHTTP = async (url, methodType, data) => {
 
 sendHTTP("/budgetChartData", "GET", true).then((res) => {
     res.json().then((res1) => {
+        if (res1.datasets.length === 0) {
+            var noBudget = document.createElement("img");
+            noBudget.src = "images/NoBudget.svg";
+            noBudget.classList = "no-budget";
+            noBudget.alt =
+                "Icon of man shrugging wondering where his money/budget is.";
+            document.getElementsByTagName("main")[0].appendChild(noBudget);
+        }
         data = res1;
         const config = {
             type: "line",
