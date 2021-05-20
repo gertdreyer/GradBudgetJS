@@ -1,0 +1,18 @@
+<h1 class="budget-h1">Edit Budget</h1>
+<form id="edit-budget-form" method="post" action="/budgets/{{usercategoryid}}">
+    <input type="hidden" id="id" value="{{usercategoryid}}">
+    <input type="hidden"  id="userid" value="{{userid}}">
+    <label class="transaction-heading form-label">Category:</label>
+    <input class="form-input" id="desc" type="text" value="{{categoryname}}">
+    <label class="transaction-heading form-label">Amount:</label>
+    <input class="form-input" id="budget" type="text" value="{{budget}}">
+    <section class="transaction-btn-container">
+        <button id="put-budget" type="button" class="btn-general btn-confirm">
+            <img class="btn-icon" src="/images/tick.svg">
+        </button>
+        <button id="cancel" type="button" class="btn-general btn-cancel">
+            <img class="btn-icon" src="/images/cross.svg">
+        </button>
+    </section>
+</form>
+<script src="/js/budgets.js"></script>
