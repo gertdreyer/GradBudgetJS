@@ -51,3 +51,35 @@
 .edit img {
   width: 50px;
 }
+
+.form-label {
+  font-size: 4rem;
+  display: block;
+  margin: 20px auto 0 10%;
+  font-weight: 300;
+}
+
+.form-input {
+  font-size: 4rem;
+  display: block;
+  padding: 20px;
+  margin: 20px auto 0 auto;
+  font-weight: 300;
+}
+
+.transaction-btn-container {
+  margin: 10% 10% 0 10%;
+  width: 90%;
+}
+
+#cancel,
+#put-transaction {
+  margin-top: 20px;
+  float: none;
+  width: 90%;
+  display: block;
+}
+
+#edit-transaction-form {
+  margin-top: 50px;
+}
