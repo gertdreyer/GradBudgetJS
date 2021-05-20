@@ -20,22 +20,28 @@ nav {
   .nav-list .nav-item {
     float: none;
     text-align: center;
-    border-bottom: 1px solid #bbb;
   }
-  .nav-item:last-child {
-    border-bottom: none;
+  nav {
+    height: fit-content;
   }
+  .nav-list:last-child {
+    padding-bottom: 10px;
+  }
+
+}
+.nav-item {
+  padding: 5px;
 }
 .nav-item > a {
   font-family: var(--primary-font);
   text-decoration: none;
   display: block;
   padding: 8px;
-  background-color: #dddddd;
+  background-color:  var(--secondary-colour);
+  border: none;
+  border-radius: 30px;
 }
-.nav-item:last-child {
-  border-right: none;
-}
+
 .nav-item > a:hover {
   background-color: var(--background-colour);
 }
