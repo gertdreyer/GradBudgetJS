@@ -26,6 +26,8 @@ footer {
   border: none;
   padding: 10px;
   border-radius: 30px;
+  color: var(--panel-background-colour);
+  font-family: var(--primary-font);
 }
 
 .btn-confirm {
