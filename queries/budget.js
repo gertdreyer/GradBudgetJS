@@ -66,9 +66,25 @@ const updateBudgetById = async (queryParams) => {
     }
 };
 
+const getBudgetsForUserById = async (queryParams) => {
+    let query = `
+    SELECT usercategoryid, categoryname, userid, budget
+    FROM usercategories WHERE userid = $1 AND usercategoryid = $2;
+  `;
+
+    try {
+        const result = await client.query(query, queryParams);
+        return result.rows;
+    } catch (e) {
+        console.log(e);
+        return "Error getting data";
+    }
+};
+
 module.exports = {
     getBudgets,
     getBudgetsForUser,
     createBudget,
     updateBudgetById,
+    getBudgetsForUserById,
 };

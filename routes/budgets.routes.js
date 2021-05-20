@@ -5,6 +5,7 @@ const {
     getBudgetsForUser,
     createBudget,
     updateBudgetById,
+    getBudgetsForUserById,
 } = require("../queries/budget");
 
 router.get("/budgets", async (req, res) => {
@@ -14,6 +15,12 @@ router.get("/budgets", async (req, res) => {
         navlist,
     };
     res.render("budget", content);
+});
+
+router.get("/budgets/:id", async (req, res) => {
+    const { id } = req.params;
+    const result = await getBudgetsForUserById([res.locals.uid, id]);
+    res.json(result);
 });
 
 router.post("/budgets", async (req, res) => {
