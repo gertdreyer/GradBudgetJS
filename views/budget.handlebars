@@ -1,9 +1,18 @@
-<h1 class="budget-h1">Budget</h1>
+<h1 class="transactions-title">Budget</h1>
 <ul class="budget-ol">
     {{#each budget}}
         <li class="budget-li">
             <h3 class="budget-h3-1">{{categoryname}}</h3>
-            <h3 class="budget-h3-2">{{budget}}</h3>
+            <h4 class="budget-h3-2">{{budget}}</h4>
+            <button onclick='location.href="budgets/{{usercategoryid}}"' class="budget-button">
+                <img class="btn-icon" src="/images/edit.svg">
+            </button>
         </li>
     {{/each}}
+    <button onclick='location.href="new-budget"' class="btn-general new-transaction-btn">
+        <section class="btn-inner-container">
+            <h5 class="btn-text">Create new Budget</h5>
+            <img class="btn-icon plus-icon" src="/images/plus.svg">
+        </section>
+    </button>
 </ul>
