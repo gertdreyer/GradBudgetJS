@@ -48,6 +48,6 @@ nav {
 .nav-item > a:visited {
   color: #000
 }
-.nav-item > a:active {
-  background-color: var(--positive-colour);
+.nav-item > a.active{
+  background-color: var(--btn-positive-colour);
 }
