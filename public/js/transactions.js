@@ -4,7 +4,6 @@ const cancelBtn = document.getElementById("cancel");
 
 const sendHTTP = async (url, methodType, data) => {
     if (url && data) {
-        console.log(data);
         await fetch(url, {
             method: methodType,
             body: JSON.stringify(data),
