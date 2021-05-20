@@ -1,0 +1,14 @@
+<form method="post" action="/transactions/{{userexpenceid}}">
+    <input type="hidden" id="id" value="{{userexpenceid}}">
+    <label class="form-label">Description:</label>
+    <input class="form-input" id="desc" type="text" value="{{description}}">
+    <label class="form-label">Amount:</label>
+    <input class="form-input" id="amount" type="text" value="{{amount}}">
+    <button id="put-transaction" type="button" class="btn-general btn-confirm edit">
+        <img class="btn-icon" src="/images/tick.svg">
+    </button>
+    <button id="cancel" type="button" class="btn-general btn-cancel edit">
+        <img class="btn-icon" src="/images/cross.svg">
+    </button>
+</form>
+<script src="/js/transactions.js"></script>

@@ -1,0 +1,10 @@
+<h2 class="transactions-title">Transactions</h2>
+<ul class="transaction-list">
+    {{#each transactions}}
+        <li class="transaction-container">
+            <h3 class="transaction-heading">{{description}}</h3>
+            <h4 class="transaction-amount">{{amount}}</h4>
+            <button onclick='location.href="transactions/{{userexpenceid}}"' class="btn-general edit"><img class="btn-icon" src="/images/edit.svg"></button>
+        </li>
+    {{/each}}
+</ul>
