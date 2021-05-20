@@ -83,4 +83,8 @@ router.put("/budgets/:id", async (req, res) => {
     }
 });
 
+router.get("/new-budget", async (req, res) => {
+    res.render("create-budget");
+});
+
 module.exports = router;
