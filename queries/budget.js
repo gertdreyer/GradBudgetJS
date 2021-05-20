@@ -75,6 +75,15 @@ const getBudgetUsageForUser = async (queryParams) => {
         GROUP BY month,catagoryname, usercategoryid
     `;
 
+    try {
+        const result = await client.query(query, queryParams);
+        return result.rows;
+    } catch (e) {
+        console.log(e);
+        return "Error retrieving budget";
+    }
+};
+
 const getBudgetsForUserById = async (queryParams) => {
     let query = `
     SELECT usercategoryid, categoryname, userid, budget
@@ -124,5 +133,5 @@ module.exports = {
     updateBudgetById,
     getBudgetChartdata,
     getBudgetsForUserById,
-
+    getBudgetUsageForUser,
 };
