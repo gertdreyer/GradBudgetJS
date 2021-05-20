@@ -19,13 +19,12 @@ FOREIGN KEY
 (UserID)
 );
 
-CREATE TABLE UserTransactions
-(
-    UserExpenceID BIGSERIAL PRIMARY KEY NOT NULL,
-    Description VARCHAR(30) NOT NULL,
-    Amount Money NOT NULL,
-    CategoryID BIGINT,
-    UserID BIGINT,
-    FOREIGN KEY(UserID) REFERENCES Users(UserID),
-    FOREIGN KEY(CategoryID) REFERENCES UserCategories(UserCategoryID)
-);
+CREATE TABLE UserTransactions(
+UserExpenceID BIGSERIAL PRIMARY KEY NOT NULL,
+Description VARCHAR(30) NOT NULL,
+Amount Money NOT NULL,
+CategoryID BIGINT,
+UserID BIGINT,
+month date NOT NULL DEFAULT CURRENT_DATE,
+FOREIGN KEY(UserID) REFERENCES Users(UserID),
+FOREIGN KEY(CategoryID) REFERENCES UserCatagories(UserCategoryID)
