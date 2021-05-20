@@ -112,7 +112,7 @@ const getBudgetChartdata = async (queryParams) => {
          SELECT month,categoryname, usercategoryid,COALESCE(budget,0 :: money) AS budget, 
          COALESCE(Sum(amount),0 :: money) AS used FROM months
                 LEFT JOIN usertransactions ut ON ut.userid = $1::int AND MONTH = DATE_TRUNC('month', ut.date)
-                  LEFT JOIN usercategories uc ON ut.categoryid = ut.categoryid
+                  LEFT JOIN usercategories uc ON uc.userid = $1::int AND ut.categoryid = ut.categoryid
                 GROUP BY month,categoryname, usercategoryid
                 ORDER BY month
     `;
