@@ -7,6 +7,47 @@ nav {
 }
 
 .nav-list {
-  list-style: none;
+  list-style-type: none;
   margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  float: left;
+  border-right: 1px solid #bbb;
+}
+@media screen and (max-width: 600px) {
+  .nav-list .nav-item {
+    float: none;
+    text-align: center;
+  }
+  nav {
+    height: fit-content;
+  }
+  .nav-list:last-child {
+    padding-bottom: 10px;
+  }
+
+}
+.nav-item {
+  padding: 5px;
+}
+.nav-item > a {
+  font-family: var(--primary-font);
+  text-decoration: none;
+  display: block;
+  padding: 8px;
+  background-color:  var(--secondary-colour);
+  border: none;
+  border-radius: 30px;
+}
+
+.nav-item > a:hover {
+  background-color: var(--background-colour);
+}
+.nav-item > a:visited {
+  color: #000
+}
+.nav-item > a:active {
+  background-color: var(--positive-colour);
 }

@@ -5,11 +5,13 @@ const {
     updateTransaction,
     getTransactionsForUserById,
 } = require("../queries/transactions");
+const navlist = require("./navlist");
 
 router.get("/transactions", async (req, res) => {
     const result = await getTransactionsForUser([res.locals.uid]);
     const content = {
         transactions: result,
+        navlist,
     };
     res.render("transactions", content);
 });
@@ -18,7 +20,7 @@ router.get("/transactions/:id", async (req, res) => {
     const { id } = req.params;
     const result = await getTransactionsForUserById([res.locals.uid, id]);
     const content = result[0];
-
+    content.navlist = navlist;
     res.render("edit-transaction", content);
 });
 

@@ -27,6 +27,7 @@ const putTransactions = async () => {
     window.location = "/transactions";
 };
 
+// eslint-disable-next-line no-unused-vars
 const postTransactions = async () => {
     const desc = document.getElementById("desc");
     const am = document.getElementById("amount");
