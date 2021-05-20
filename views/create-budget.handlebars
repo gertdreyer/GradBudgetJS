@@ -1,0 +1,16 @@
+<h1 class="transactions-title">Create Budget</h1>
+<form id="edit-transaction-form" method="post" action="/budgets">
+    <label class="transaction-heading form-label">Budget Name:</label>
+    <input class="form-input" id="name" type="text" value="">
+    <label class="transaction-heading form-label">Budget:</label>
+    <input class="form-input" id="amount" type="text" value="$">
+    <section class="budget-btn-container">
+        <button id="post-new-budget" type="button" class="btn-general btn-confirm edit">
+            <img class="btn-icon" src="/images/tick.svg">
+        </button>
+        <button id="cancel-new-budget" type="button" class="btn-general btn-cancel edit">
+            <img class="btn-icon" src="/images/cross.svg">
+        </button>
+    </section>
+</form>
+<script src="/js/budgets.js"></script>

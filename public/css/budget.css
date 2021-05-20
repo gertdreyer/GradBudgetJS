@@ -55,3 +55,16 @@ ol, li, p, h4 {
     margin: 15px 0;
     text-align: center;
   }
+
+  .budget-btn-container {
+    margin: 10% 10% 0 10%;
+    width: 90%;
+  }
+
+  #cancel-new-budget,
+  #post-new-budget {
+    margin-top: 20px;
+    float: none;
+    width: 90%;
+    display: block;
+  }
