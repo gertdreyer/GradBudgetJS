@@ -81,7 +81,9 @@ h4 {
 }
 
 #cancel-new-budget,
-#post-new-budget {
+#post-new-budget,
+#cancel,
+#put-budget {
   margin-top: 20px;
   float: none;
   width: 90%;
