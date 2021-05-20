@@ -84,9 +84,37 @@ const getBudgetUsageForUser = async (queryParams) => {
     }
 };
 
+const getBudgetChartdata = async (queryParams) => {
+    let query = `
+    WITH months AS (
+        select generate_series(
+          date(date_trunc('month', NOW()::DATE) - '1 year'::INTERVAL ) ,
+          date(date_trunc('day', NOW()::date)), 
+          '1 month'::interval
+        ) as month )
+        
+        
+         SELECT month,categoryname, usercategoryid,COALESCE(budget,0 :: money) AS budget, 
+         COALESCE(Sum(amount),0 :: money) AS used FROM months
+                LEFT JOIN usertransactions ut ON ut.userid = $1::int AND MONTH = DATE_TRUNC('month', ut.date)
+                  LEFT JOIN usercategories uc ON ut.categoryid = ut.categoryid
+                GROUP BY month,categoryname, usercategoryid
+                ORDER BY month
+    `;
+
+    try {
+        const result = await client.query(query, queryParams);
+        return result.rows;
+    } catch (e) {
+        console.log(e);
+        return "Error retrieving budget";
+    }
+};
+
 module.exports = {
     getBudgets,
     getBudgetsForUser,
     createBudget,
     updateBudgetById,
+    getBudgetChartdata,
 };
