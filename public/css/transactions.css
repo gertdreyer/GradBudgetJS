@@ -65,6 +65,7 @@
   padding: 20px;
   margin: 20px auto 0 auto;
   font-weight: 300;
+  min-width: 70%;
 }
 
 .transaction-btn-container {
@@ -73,7 +74,8 @@
 }
 
 #cancel,
-#put-transaction {
+#put-transaction,
+#post-transaction {
   margin-top: 20px;
   float: none;
   width: 90%;
@@ -109,3 +111,6 @@
   margin: 15px 0 0 20%;
 }
 
+#category {
+  min-width: 75%;
+}
