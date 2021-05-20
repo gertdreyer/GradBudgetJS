@@ -22,7 +22,9 @@ router.get("/budgets", async (req, res) => {
 router.get("/budgets/:id", async (req, res) => {
     const { id } = req.params;
     const result = await getBudgetsForUserById([res.locals.uid, id]);
-    res.json(result);
+    const content = result[0];
+    content.navlist = navlist;
+    res.render("budget-edit", content);
 });
 
 router.get("/budgetChartData", async (req, res) => {

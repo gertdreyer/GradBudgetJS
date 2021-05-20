@@ -10,21 +10,23 @@ ol, li, p, h4 {
   
   .budget-ol {
     counter-reset: section;
+    background: var(--panel-background-color);
+    list-style: none;
+    margin: 2% 2% 0 2%;
+    padding: 0;
+    max-height: 100%;
   }
   
   .budget-li { 
     list-style-type: none;
     position: relative;
     font-size: 1.5rem;
-    padding-bottom: 15px;
-    padding-top: 15px;
-    padding-right: 20%;
-    padding-left: 2%;
+    padding: 2% 25% 2% 2%;
     margin-bottom: 35px;
     margin-left: 35px;
     margin-right: 35px;
     width: min-content;
-    background: var(--background-color);
+    background: white;
     box-shadow: 2px 2px 2px 2px lightgray;
     color: black;
     border-radius: 25px;
@@ -56,15 +58,22 @@ ol, li, p, h4 {
     text-align: center;
   }
 
-  .budget-btn-container {
-    margin: 10% 10% 0 10%;
-    width: 90%;
+  .budget-button {
+      position: relative;
+      float:inherit;
+      color: var(--panel-background-colour);
+      font-family: var(--primary-font);
+      background-color: var(--primary-colour);
+      border-radius: 10px;
   }
 
-  #cancel-new-budget,
-  #post-new-budget {
-    margin-top: 20px;
-    float: none;
-    width: 90%;
-    display: block;
-  }
+.cancel,
+.put-budget {
+  margin-top: 20px;
+  float: none;
+  display: block;
+}
+
+#edit-budget-form {
+  margin-top: 50px;
+}
