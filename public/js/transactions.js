@@ -38,7 +38,7 @@ const postTransactions = async () => {
     const data = {
         description: desc.value,
         amount: am.value,
-        categoryid: catid,
+        categoryid: catid.value,
     };
 
     await sendHTTP(`/transactions`, "POST", data);
