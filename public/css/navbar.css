@@ -24,14 +24,7 @@ nav {
 
 @media screen and (max-width: 600px) {
   .nav-list .nav-item {
-    float: none;
     text-align: center;
-  }
-  nav {
-    height: fit-content;
-  }
-  .nav-list:last-child {
-    padding-bottom: 10px;
   }
 
 }
