@@ -1,7 +1,9 @@
 <form method="post" action="/transactions/{{userexpenceid}}">
+    <input type="hidden" id="id" value="{{userexpenceid}}">
     <label>Description</label>
-    <input type="text" value="{{description}}">
+    <input id="desc" type="text" value="{{description}}">
     <label>Amount</label>
-    <input type="text" value="{{amount}}">
-    <button type="submit"></button>
+    <input id="amount" type="text" value="{{amount}}">
+    <button id="put-transaction" type="button"></button>
 </form>
+<script src="/js/transactions.js"></script>
