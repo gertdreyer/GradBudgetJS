@@ -1,4 +1,6 @@
-const submitBtn = document.getElementById("put-transaction");
+const putBtn = document.getElementById("put-transaction");
+const postBtn = document.getElementById("post-transaction");
+const cancelBtn = document.getElementById("cancel");
 
 const sendHTTP = async (url, methodType, data) => {
     if (url && data) {
@@ -44,4 +46,17 @@ const postTransactions = async () => {
     window.location = "/transactions";
 };
 
-submitBtn.addEventListener("click", () => putTransactions());
+if (putBtn) {
+    putBtn.addEventListener("click", () => putTransactions());
+}
+
+if (postBtn) {
+    postBtn.addEventListener("click", () => postTransactions());
+}
+
+if (cancelBtn) {
+    cancelBtn.addEventListener(
+        "click",
+        () => (window.location = "/transactions")
+    );
+}
