@@ -2,7 +2,7 @@
   color: var(--primary-colour);
   margin: 2% 0 1% 5%;
   font-size: var(--heading-font-size);
-  font-family: "Roboto", sans-serif;
+  font-family: var(--primary-font);
   font-weight: 500;
 }
 
@@ -29,14 +29,14 @@
   color: var(--muted-text-colour);
   margin: 0;
   font-size: var(--panel-heading-font-size);
-  font-family: "Roboto", sans-serif;
+  font-family: var(--primary-font);
   font-weight: 300;
 }
 
 .transaction-amount {
   font-size: var(--panel-amount-font-size);
   margin: 20px 20px 20px 0;
-  font-family: "Roboto", sans-serif;
+  font-family: var(--primary-font);
   font-weight: 300;
   display: inline-block;
 }
