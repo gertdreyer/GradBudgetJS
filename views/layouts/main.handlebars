@@ -5,19 +5,21 @@
     <meta charset="utf-8">
     <title>Grad Budget JS</title>
 
-    <link rel="stylesheet" href="/css/general.css">
     <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/general.css">
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/transactions.css">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
+    <script src="/js/nav.js"></script>
+
 </head>
 
-<body>
+<body onload="makeNavActive()">
     <nav>
         <ul class="nav-list">
-            {{#each navlist}}
+            {{#each navlist }}
             <li class="nav-item">
                 <a href={{href}}>{{name}}</a>
             </li>
