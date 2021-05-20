@@ -66,12 +66,13 @@ const updateBudgetById = async (queryParams) => {
     }
 };
 
+// eslint-disable-next-line no-unused-vars
 const getBudgetUsageForUser = async (queryParams) => {
     let query = `
-    SELECT catagoryname, usercategoryid,budget, Sum(amount) AS used FROM usercatagories uc
-    INNER JOIN usertransactions ut ON uc.USERid = ut.userid 
-    WHERE ut.userid = $1 ::int
-    GROUP BY catagoryname, usercategoryid
+        SELECT DATE_TRUNC('month',DATE) as month,catagoryname, usercategoryid,budget, Sum(amount) AS used FROM usercatagories uc
+        INNER JOIN usertransactions ut ON uc.USERid = ut.userid 
+        WHERE ut.userid =  $1 ::int
+        GROUP BY month,catagoryname, usercategoryid
     `;
 
     try {
