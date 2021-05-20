@@ -36,6 +36,10 @@ footer {
   font-family: var(--primary-font);
 }
 
+.btn-general:hover {
+  cursor: pointer;
+}
+
 .btn-confirm {
   background-color: var(--btn-positive-colour);
 }
