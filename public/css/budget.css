@@ -12,6 +12,8 @@ h4 {
 }
 
 .budget-ol {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   counter-reset: section;
   background: var(--panel-background-color);
   list-style: none;
@@ -24,11 +26,11 @@ h4 {
   list-style-type: none;
   position: relative;
   font-size: 1.5rem;
-  padding: 2% 25% 2% 2%;
+  padding: 2% 2% 2% 2%;
   margin-bottom: 35px;
   margin-left: 35px;
   margin-right: 35px;
-  width: min-content;
+  width: 80%;
   background: white;
   box-shadow: 2px 2px 2px 2px lightgray;
   color: black;
@@ -51,7 +53,7 @@ h4 {
 .budget-h3-1 {
   position: left;
   font-size: 1.65rem;
-  margin: 15px 0;
+  margin: 10px 0 0 15px;
   text-align: left;
   color: rgb(182, 178, 178);
   font-family: var(--primary-font);
@@ -60,9 +62,10 @@ h4 {
 
 .budget-h3-2 {
   font-size: 1.65rem;
-  margin: 15px 0;
-  text-align: center;
+  margin: 10px 0 0 15px;
+  text-align: left;
   font-family: var(--primary-font);
+  font-size: 2rem;
 }
 
 .budget-button {
@@ -72,6 +75,8 @@ h4 {
   font-family: var(--primary-font);
   background-color: var(--primary-colour);
   border-radius: 10px;
+  margin: 10px 10px 10px 10px;
+  float: right;
 }
 
 .cancel,
