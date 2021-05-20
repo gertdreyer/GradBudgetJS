@@ -1,9 +1,8 @@
 <h1 class="budget-h1">Edit Budget</h1>
 <form id="edit-budget-form" method="post" action="/budgets/{{usercategoryid}}">
     <input type="hidden" id="id" value="{{usercategoryid}}">
-    <input type="hidden"  id="userid" value="{{userid}}">
     <label class="transaction-heading form-label">Category:</label>
-    <input class="form-input" id="desc" type="text" value="{{categoryname}}">
+    <input class="form-input" id="categoryname" type="text" value="{{categoryname}}">
     <label class="transaction-heading form-label">Amount:</label>
     <input class="form-input" id="budget" type="text" value="{{budget}}">
     <section class="transaction-btn-container">

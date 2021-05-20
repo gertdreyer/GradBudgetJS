@@ -1,71 +1,73 @@
-ol, li, p, h4 {
-    margin: 0;
-  }
+ol,
+li,
+p,
+h4 {
+  margin: 0;
+}
 
-  .budget-h1 {
-    font-family: var(--primary-font);
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-  
-  .budget-ol {
-    counter-reset: section;
-    background: var(--panel-background-color);
-    list-style: none;
-    margin: 2% 2% 0 2%;
-    padding: 0;
-    max-height: 100%;
-  }
-  
-  .budget-li { 
-    list-style-type: none;
-    position: relative;
-    font-size: 1.5rem;
-    padding: 2% 25% 2% 2%;
-    margin-bottom: 35px;
-    margin-left: 35px;
-    margin-right: 35px;
-    width: min-content;
-    background: white;
-    box-shadow: 2px 2px 2px 2px lightgray;
-    color: black;
-    border-radius: 25px;
-  }
-  
-  .budget-h4 {
-    position: relative;
-    padding-bottom: 10px;
-  }
-  
-  
-  .budget-p {
-    font-size: .9rem; 
-    line-height: 1.4rem;
-    margin-top: 15px;
-  }
-  
-  .budget-h3-1 {
-    position: left;
-    font-size: 1.65rem;
-    margin: 15px 0;
-    text-align: left;
-    color:rgb(182, 178, 178);
-  }
-  
-  .budget-h3-2 {
-    font-size: 1.65rem;
-    margin: 15px 0;
-    text-align: center;
-  }
+.budget-h1 {
+  font-family: var(--primary-font);
+  padding-left: 5%;
+  padding-right: 5%;
+}
 
-  .budget-button {
-      position: relative;
-      float:inherit;
-      color: var(--panel-background-colour);
-      font-family: var(--primary-font);
-      background-color: var(--primary-colour);
-      border-radius: 10px;
-  }
+.budget-ol {
+  counter-reset: section;
+  background: var(--panel-background-color);
+  list-style: none;
+  margin: 2% 2% 0 2%;
+  padding: 0;
+  max-height: 100%;
+}
+
+.budget-li {
+  list-style-type: none;
+  position: relative;
+  font-size: 1.5rem;
+  padding: 2% 25% 2% 2%;
+  margin-bottom: 35px;
+  margin-left: 35px;
+  margin-right: 35px;
+  width: min-content;
+  background: white;
+  box-shadow: 2px 2px 2px 2px lightgray;
+  color: black;
+  border-radius: 25px;
+}
+
+.budget-h4 {
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.budget-p {
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+  margin-top: 15px;
+}
+
+.budget-h3-1 {
+  position: left;
+  font-size: 1.65rem;
+  margin: 15px 0;
+  text-align: left;
+  color: rgb(182, 178, 178);
+}
+
+.budget-h3-2 {
+  font-size: 1.65rem;
+  margin: 15px 0;
+  text-align: center;
+}
+
+.budget-button {
+  position: relative;
+  float: inherit;
+  color: var(--panel-background-colour);
+  font-family: var(--primary-font);
+  background-color: var(--primary-colour);
+  border-radius: 10px;
+}
 
 .cancel,
 .put-budget {
@@ -76,4 +78,16 @@ ol, li, p, h4 {
 
 #edit-budget-form {
   margin-top: 50px;
+}
+
+#cancel-new-budget,
+#post-new-budget {
+  margin-top: 20px;
+  float: none;
+  width: 90%;
+  display: block;
+}
+.budget-btn-container {
+  margin: 10% 10% 0 10%;
+  width: 90%;
 }

@@ -13,7 +13,6 @@ const sendHTTP = async (url, methodType, data) => {
 
 sendHTTP("/budgetChartData", "GET", true).then((res) => {
     res.json().then((res1) => {
-        console.log(res1);
         data = res1;
         const config = {
             type: "line",
