@@ -1,10 +1,10 @@
 <h1 class="transactions-title">Create Transaction</h1>
 <form id="edit-transaction-form" method="post" action="/transactions">
-    <label class="transaction-heading form-label">Description:</label>
+    <label class="transaction-heading form-label" for="desc">Description:</label>
     <input class="form-input" id="desc" type="text" value="">
-    <label class="transaction-heading form-label">Amount:</label>
+    <label class="transaction-heading form-label" for="amount">Amount:</label>
     <input class="form-input" id="amount" type="text" value="$">
-    <label class="transaction-heading form-label">Budget:</label>
+    <label class="transaction-heading form-label" for="category">Budget:</label>
     <select class="form-input dropdown" name="budget" id="category">
         {{#each budgets}}
             <option class="dropdown-item" value={{usercategoryid}}>{{categoryname}}</option>
@@ -12,10 +12,10 @@
     </select>
     <section class="transaction-btn-container">
         <button aria-label="submit" id="post-transaction" type="button" class="btn-general btn-confirm edit">
-            <img class="btn-icon" src="/images/tick.svg">
+            <img class="btn-icon" src="/images/tick.svg" alt="tick icon">
         </button>
         <button aria-label="cancel" id="cancel" type="button" class="btn-general btn-cancel edit">
-            <img class="btn-icon" src="/images/cross.svg">
+            <img class="btn-icon" src="/images/cross.svg" alt="cross icon">
         </button>
     </section>
 </form>

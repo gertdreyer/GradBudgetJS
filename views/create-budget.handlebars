@@ -1,15 +1,15 @@
 <h1 class="transactions-title">Create Budget</h1>
 <form id="edit-transaction-form" method="post" action="/budgets">
-    <label class="transaction-heading form-label">Budget Name:</label>
+    <label class="transaction-heading form-label" for="name">Budget Name:</label>
     <input class="form-input" id="name" type="text" value="">
-    <label class="transaction-heading form-label">Budget:</label>
+    <label class="transaction-heading form-label" for="amount">Budget:</label>
     <input class="form-input" id="amount" type="text" value="$">
     <section class="budget-btn-container">
         <button aria-label="submit" id="post-new-budget" type="button" class="btn-general btn-confirm edit">
-            <img class="btn-icon" src="/images/tick.svg">
+            <img class="btn-icon" src="/images/tick.svg" alt="tick icon">
         </button>
         <button aria-label="cancel" id="cancel-new-budget" type="button" class="btn-general btn-cancel edit">
-            <img class="btn-icon" src="/images/cross.svg">
+            <img class="btn-icon" src="/images/cross.svg" alt="cross icon">
         </button>
     </section>
 </form>
